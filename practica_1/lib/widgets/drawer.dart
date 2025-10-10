@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:practica_1/screens/pantalla_fotos_repetidas.dart';
 import '../screens/pantalla_principal.dart';
 import '../screens/pantalla_repo.dart';
 import '../screens/pantalla_fotos.dart';
 import '../screens/pantalla_iconos.dart';
 import '../screens/pantalla_columna_fotos.dart';
+import '../screens/pantalla_textos_contenedor.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -67,6 +69,26 @@ class AppDrawer extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => PantallaFotosColumna()),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Textos en contenedor'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PantallaTextosContenedor()),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Fotos repetidas'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PantallaFotosRepetidas()),
               );
             },
           ),
