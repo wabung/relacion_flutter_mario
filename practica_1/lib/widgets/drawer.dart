@@ -6,6 +6,8 @@ import '../screens/pantalla_fotos.dart';
 import '../screens/pantalla_iconos.dart';
 import '../screens/pantalla_columna_fotos.dart';
 import '../screens/pantalla_textos_contenedor.dart';
+import '../screens/pantalla_responsive.dart';
+import '../screens/pantalla_desafio.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -89,6 +91,26 @@ class AppDrawer extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => PantallaFotosRepetidas()),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Fotos responsive'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PantallaResponsive()),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Desafío'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PantallaDesafio()),
               );
             },
           ),

@@ -19,7 +19,7 @@ class PantallaFotosRepetidas extends StatelessWidget {
               Image.asset('assets/img/gato_entrenando.png', width: 150, height: 150),
               
               Image(
-                image: NetworkImage('https://picsum.photos/150/150?random=1'),
+                image: NetworkImage('https://i.imgur.com/QDEEzlC.jpeg'),
                 width: 150,
                 height: 150,
               ),
@@ -29,7 +29,7 @@ class PantallaFotosRepetidas extends StatelessWidget {
               Image.asset('assets/img/gato_entrenando.png', width: 150, height: 150),
               
               Image(
-                image: NetworkImage('https://picsum.photos/150/150?random=2'),
+                image: NetworkImage('https://i.imgur.com/J8zvgVs.jpeg'),
                 width: 150,
                 height: 150,
               ),
@@ -39,7 +39,7 @@ class PantallaFotosRepetidas extends StatelessWidget {
               Image.asset('assets/img/gato_entrenando.png', width: 150, height: 150),
               
               Image(
-                image: NetworkImage('https://picsum.photos/150/150?random=3'),
+                image: NetworkImage('https://i.imgur.com/WhlSpA3.jpeg'),
                 width: 150,
                 height: 150,
               ),
