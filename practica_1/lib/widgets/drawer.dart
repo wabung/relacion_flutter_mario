@@ -8,6 +8,8 @@ import '../screens/pantalla_columna_fotos.dart';
 import '../screens/pantalla_textos_contenedor.dart';
 import '../screens/pantalla_responsive.dart';
 import '../screens/pantalla_desafio.dart';
+import '../screens/pantalla_widget_contador.dart';
+import '../screens/pantalla_perfil_instagram.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -111,6 +113,26 @@ class AppDrawer extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => PantallaDesafio()),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Contador de clicks'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PantallaContador()),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Perfil de Instagram'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PantallaPerfilInstagram()),
               );
             },
           ),
