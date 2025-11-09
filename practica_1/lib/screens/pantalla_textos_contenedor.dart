@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widgets/drawer.dart';
+import '../widgets/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PantallaTextosContenedor extends StatelessWidget {
@@ -7,13 +7,10 @@ class PantallaTextosContenedor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "Textos en contenedor",
-      home: Scaffold(
-        appBar: AppBar(title: Center(child: Text('Textos en contenedor'))),
-        drawer: const AppDrawer(),
-        body: Center(
+    return Scaffold(
+      appBar: AppBar(title: const Center(child: Text('Textos en contenedor'))),
+      drawer: const AppDrawer(),
+      body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -38,7 +35,6 @@ class PantallaTextosContenedor extends StatelessWidget {
             ],
           ),
         ),
-      ),
     );
   }
 }

@@ -1,15 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practica_1/screens/pantalla_fotos_repetidas.dart';
-import '../screens/pantalla_principal.dart';
-import '../screens/pantalla_repo.dart';
-import '../screens/pantalla_fotos.dart';
-import '../screens/pantalla_iconos.dart';
-import '../screens/pantalla_columna_fotos.dart';
-import '../screens/pantalla_textos_contenedor.dart';
-import '../screens/pantalla_responsive.dart';
-import '../screens/pantalla_desafio.dart';
-import '../screens/pantalla_widget_contador.dart';
-import '../screens/pantalla_perfil_instagram.dart';
+import '../routes/app_routes.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -19,7 +9,7 @@ class AppDrawer extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: [
-          DrawerHeader(
+          const DrawerHeader(
             decoration: BoxDecoration(color: Colors.blue),
             child: Text(
               'Menú',
@@ -27,113 +17,94 @@ class AppDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: Text('Pantalla Principal (sobre mi)'),
+            title: const Text('Pantalla Principal (sobre mi)'),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => MyApp()),
-              );
+              Navigator.pushReplacementNamed(context, AppRoutes.home);
             },
           ),
           ListTile(
-            title: Text('Nombre y repositorio'),
+            title: const Text('Nombre y repositorio'),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => PantallaRepo()),
-              );
+              Navigator.pushReplacementNamed(context, AppRoutes.repo);
             },
           ),
           ListTile(
-            title: Text('Galería de fotos'),
+            title: const Text('Galería de fotos'),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => PantallaFotos()),
-              );
+              Navigator.pushReplacementNamed(context, AppRoutes.fotos);
             },
           ),
           ListTile(
-            title: Text('Iconos'),
+            title: const Text('Iconos'),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => PantallaIconos()),
-              );
+              Navigator.pushReplacementNamed(context, AppRoutes.iconos);
             },
           ),
           ListTile(
-            title: Text('Fotos en columna'),
+            title: const Text('Fotos en columna'),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => PantallaFotosColumna()),
-              );
+              Navigator.pushReplacementNamed(context, AppRoutes.columnaFotos);
             },
           ),
           ListTile(
-            title: Text('Textos en contenedor'),
+            title: const Text('Textos en contenedor'),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => PantallaTextosContenedor()),
-              );
+              Navigator.pushReplacementNamed(context, AppRoutes.textos);
             },
           ),
           ListTile(
-            title: Text('Fotos repetidas'),
+            title: const Text('Fotos repetidas'),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => PantallaFotosRepetidas()),
-              );
+              Navigator.pushReplacementNamed(context, AppRoutes.fotosRepetidas);
             },
           ),
           ListTile(
-            title: Text('Fotos responsive'),
+            title: const Text('Fotos responsive'),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => PantallaResponsive()),
-              );
+              Navigator.pushReplacementNamed(context, AppRoutes.responsive);
             },
           ),
           ListTile(
-            title: Text('Desafío'),
+            title: const Text('Desafío'),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => PantallaDesafio()),
-              );
+              Navigator.pushReplacementNamed(context, AppRoutes.desafio);
             },
           ),
           ListTile(
-            title: Text('Contador de clicks'),
+            title: const Text('Contador de clicks'),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => PantallaContador()),
-              );
+              Navigator.pushReplacementNamed(context, AppRoutes.contador);
             },
           ),
           ListTile(
-            title: Text('Perfil de Instagram'),
+            title: const Text('Perfil de Instagram'),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => PantallaPerfilInstagram()),
-              );
+              Navigator.pushReplacementNamed(context, AppRoutes.instagram);
+            },
+          ),
+          ListTile(
+            title: const Text('Colores Random'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushReplacementNamed(context, AppRoutes.coloresRandom);
+            },
+          ),
+          ListTile(
+            title: const Text('Imágenes Random'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushReplacementNamed(context, AppRoutes.imagenesRandom);
             },
           ),
         ],

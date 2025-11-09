@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
-import '../widgets/drawer.dart';
+import '../widgets/widgets.dart';
 
 class PantallaFotosRepetidas extends StatelessWidget {
   const PantallaFotosRepetidas({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "Imagenes repetidas",
-      home: Scaffold(
-        appBar: AppBar(title: Center(child: Text('Imagenes repetidas'))),
-        drawer: const AppDrawer(),
-        body: SingleChildScrollView(
+    return Scaffold(
+      appBar: AppBar(title: const Center(child: Text('Imagenes repetidas'))),
+      drawer: const AppDrawer(),
+      body: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -48,7 +45,6 @@ class PantallaFotosRepetidas extends StatelessWidget {
             ],
           ),
         ),
-      ),
     );
   }
 }

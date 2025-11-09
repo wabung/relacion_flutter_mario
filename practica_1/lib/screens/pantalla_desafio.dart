@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widgets/drawer.dart';
+import '../widgets/widgets.dart';
 
 class PantallaDesafio extends StatelessWidget {
   const PantallaDesafio({super.key});
@@ -11,13 +11,10 @@ class PantallaDesafio extends StatelessWidget {
     final anchura = tamano.width;
     final altura = tamano.height;
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "Reto",
-      home: Scaffold(
-        appBar: AppBar(title: Center(child: Text('Pantalla de reto'))),
-        drawer: const AppDrawer(),
-        body: Center(
+    return Scaffold(
+      appBar: AppBar(title: const Center(child: Text('Pantalla de reto'))),
+      drawer: const AppDrawer(),
+      body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -48,7 +45,6 @@ class PantallaDesafio extends StatelessWidget {
             ],
           ),
         ),
-      ),
     );
   }
 }

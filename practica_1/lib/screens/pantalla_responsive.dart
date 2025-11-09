@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widgets/drawer.dart';
+import '../widgets/widgets.dart';
 
 class PantallaResponsive extends StatelessWidget {
   const PantallaResponsive({super.key});
@@ -10,13 +10,10 @@ class PantallaResponsive extends StatelessWidget {
     final tamano = MediaQuery.of(context).size;
     final anchura = tamano.width;
     final altura = tamano.height;
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "Diseño responsive",
-      home: Scaffold(
-        appBar: AppBar(title: Center(child: Text('Diseño responsive'))),
-        drawer: const AppDrawer(),
-        body: Center(
+    return Scaffold(
+      appBar: AppBar(title: const Center(child: Text('Diseño responsive'))),
+      drawer: const AppDrawer(),
+      body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -77,7 +74,6 @@ class PantallaResponsive extends StatelessWidget {
             ],
           ),
         ),
-      ),
     );
   }
 }
