@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import '../widgets/widgets.dart';
 
 class PantallaResponsive extends StatelessWidget {
-  const PantallaResponsive({super.key});
+  final bool isDarkMode;
+  final ValueChanged<bool> toggleTheme;
+  
+  const PantallaResponsive({super.key, required this.toggleTheme, required this.isDarkMode});
 
 
   @override
@@ -11,7 +14,23 @@ class PantallaResponsive extends StatelessWidget {
     final anchura = tamano.width;
     final altura = tamano.height;
     return Scaffold(
-      appBar: AppBar(title: const Center(child: Text('Diseño responsive'))),
+      appBar: AppBar(
+        title: const Center(child: Text('Diseño responsive')),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.brightness_2),
+            onPressed: () {
+              toggleTheme(!isDarkMode);
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.brightness_5),
+            onPressed: () {
+              toggleTheme(isDarkMode);
+            },
+          ),
+        ],
+      ),
       drawer: const AppDrawer(),
       body: Center(
           child: Column(

@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import '../widgets/widgets.dart';
 
 class PantallaDesafio extends StatelessWidget {
-  const PantallaDesafio({super.key});
+  final bool isDarkMode;
+  final ValueChanged<bool> toggleTheme;
+  
+  const PantallaDesafio({super.key, required this.toggleTheme, required this.isDarkMode});
 
 
   @override
@@ -12,7 +15,23 @@ class PantallaDesafio extends StatelessWidget {
     final altura = tamano.height;
 
     return Scaffold(
-      appBar: AppBar(title: const Center(child: Text('Pantalla de reto'))),
+      appBar: AppBar(
+        title: const Center(child: Text('Pantalla de reto')),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.brightness_2),
+            onPressed: () {
+              toggleTheme(!isDarkMode);
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.brightness_5),
+            onPressed: () {
+              toggleTheme(isDarkMode);
+            },
+          ),
+        ],
+      ),
       drawer: const AppDrawer(),
       body: Center(
           child: Column(

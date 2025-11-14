@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import '../widgets/widgets.dart';
 
 class PantallaPerfilInstagram extends StatelessWidget {
-  const PantallaPerfilInstagram({super.key});
+  final bool isDarkMode;
+  final ValueChanged<bool> toggleTheme;
+  
+  const PantallaPerfilInstagram({super.key, required this.toggleTheme, required this.isDarkMode});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +21,20 @@ class PantallaPerfilInstagram extends StatelessWidget {
             ],
           ),
         ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.brightness_2),
+            onPressed: () {
+              toggleTheme(!isDarkMode);
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.brightness_5),
+            onPressed: () {
+              toggleTheme(isDarkMode);
+            },
+          ),
+        ],
       ),
       drawer: const AppDrawer(),
       body: Column(

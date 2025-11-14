@@ -4,7 +4,10 @@ import 'dart:async';
 import '../widgets/widgets.dart';
 
 class RandomColors extends StatefulWidget {
-  const RandomColors({super.key});
+  final bool isDarkMode;
+  final ValueChanged<bool> toggleTheme;
+  
+  const RandomColors({super.key, required this.toggleTheme, required this.isDarkMode});
 
   @override
   State<RandomColors> createState() => _RandomColors();
@@ -82,9 +85,24 @@ class _RandomColors extends State<RandomColors> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Center(child: Text('Colores Random'))),
+      appBar: AppBar(
+        title: const Center(child: Text('Colores Random')),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.brightness_2),
+            onPressed: () {
+              widget.toggleTheme(!widget.isDarkMode);
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.brightness_5),
+            onPressed: () {
+              widget.toggleTheme(widget.isDarkMode);
+            },
+          ),
+        ],
+      ),
       drawer: const AppDrawer(),
-      backgroundColor: Colors.white,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -141,8 +159,7 @@ class _RandomColors extends State<RandomColors> {
                     'El juego ha terminado. Tu puntuación final es: $points',
                     style: TextStyle(
                       fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blue,
+                      fontWeight: FontWeight.bold
                     ),
                     textAlign: TextAlign.center,
                   ),

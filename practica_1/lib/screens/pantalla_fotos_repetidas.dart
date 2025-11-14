@@ -2,12 +2,31 @@ import 'package:flutter/material.dart';
 import '../widgets/widgets.dart';
 
 class PantallaFotosRepetidas extends StatelessWidget {
-  const PantallaFotosRepetidas({super.key});
+  final bool isDarkMode;
+  final ValueChanged<bool> toggleTheme;
+  
+  const PantallaFotosRepetidas({super.key, required this.toggleTheme, required this.isDarkMode});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Center(child: Text('Imagenes repetidas'))),
+      appBar: AppBar(
+        title: const Center(child: Text('Imagenes repetidas')),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.brightness_2),
+            onPressed: () {
+              toggleTheme(!isDarkMode);
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.brightness_5),
+            onPressed: () {
+              toggleTheme(isDarkMode);
+            },
+          ),
+        ],
+      ),
       drawer: const AppDrawer(),
       body: SingleChildScrollView(
           child: Column(

@@ -2,12 +2,31 @@ import 'package:flutter/material.dart';
 import '../widgets/widgets.dart';
 
 class PantallaFotosColumna extends StatelessWidget {
-  const PantallaFotosColumna({super.key});
+  final bool isDarkMode;
+  final ValueChanged<bool> toggleTheme;
+  
+  const PantallaFotosColumna({super.key, required this.toggleTheme, required this.isDarkMode});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Center(child: Text('Fotos en columna'))),
+      appBar: AppBar(
+        title: const Center(child: Text('Fotos en columna')),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.brightness_2),
+            onPressed: () {
+              toggleTheme(!isDarkMode);
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.brightness_5),
+            onPressed: () {
+              toggleTheme(isDarkMode);
+            },
+          ),
+        ],
+      ),
       drawer: const AppDrawer(),
       body: Center(
         child: Column(

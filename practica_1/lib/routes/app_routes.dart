@@ -16,21 +16,62 @@ class AppRoutes {
   static const String coloresRandom = '/colores-random';
   static const String imagenesRandom = '/imagenes-random';
 
-  static Map<String, WidgetBuilder> routes = {
-    home: (context) => const PantallaPrincipal(),
-    textos: (context) => const PantallaTextosContenedor(),
-    iconos: (context) => const PantallaIconos(),
-    fotos: (context) => const PantallaFotos(),
-    fotosRepetidas: (context) => const PantallaFotosRepetidas(),
-    columnaFotos: (context) => const PantallaFotosColumna(),
-    contador: (context) => const PantallaContador(),
-    desafio: (context) => const PantallaDesafio(),
-    repo: (context) => const PantallaRepo(),
-    responsive: (context) => const PantallaResponsive(),
-    instagram: (context) => const PantallaPerfilInstagram(),
-    coloresRandom: (context) => const RandomColors(),
-    imagenesRandom: (context) => const PantallaImagenesRandom(),
-  };
+  static Map<String, WidgetBuilder> getRoutes(bool isDarkMode, ValueChanged<bool> toggleTheme) {
+    return {
+      home: (context) => PantallaPrincipal(
+        isDarkMode: isDarkMode,
+        toggleTheme: toggleTheme,
+      ),
+      textos: (context) => PantallaTextosContenedor(
+        isDarkMode: isDarkMode,
+        toggleTheme: toggleTheme,
+      ),
+      iconos: (context) => PantallaIconos(
+        isDarkMode: isDarkMode,
+        toggleTheme: toggleTheme,
+      ),
+      fotos: (context) => PantallaFotos(
+        isDarkMode: isDarkMode,
+        toggleTheme: toggleTheme,
+      ),
+      fotosRepetidas: (context) => PantallaFotosRepetidas(
+        isDarkMode: isDarkMode,
+        toggleTheme: toggleTheme,
+      ),
+      columnaFotos: (context) => PantallaFotosColumna(
+        isDarkMode: isDarkMode,
+        toggleTheme: toggleTheme,
+      ),
+      contador: (context) => PantallaContador(
+        isDarkMode: isDarkMode,
+        toggleTheme: toggleTheme,
+      ),
+      desafio: (context) => PantallaDesafio(
+        isDarkMode: isDarkMode,
+        toggleTheme: toggleTheme,
+      ),
+      repo: (context) => PantallaRepo(
+        isDarkMode: isDarkMode,
+        toggleTheme: toggleTheme,
+      ),
+      responsive: (context) => PantallaResponsive(
+        isDarkMode: isDarkMode,
+        toggleTheme: toggleTheme,
+      ),
+      instagram: (context) => PantallaPerfilInstagram(
+        isDarkMode: isDarkMode,
+        toggleTheme: toggleTheme,
+      ),
+      coloresRandom: (context) => RandomColors(
+        isDarkMode: isDarkMode,
+        toggleTheme: toggleTheme,
+      ),
+      imagenesRandom: (context) => PantallaImagenesRandom(
+        isDarkMode: isDarkMode,
+        toggleTheme: toggleTheme,
+      ),
+    };
+  }
 
   static const String initialRoute = home;
 }

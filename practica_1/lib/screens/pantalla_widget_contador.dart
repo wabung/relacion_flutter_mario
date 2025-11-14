@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import '../widgets/widgets.dart';
 
 class PantallaContador extends StatefulWidget {
-  const PantallaContador({super.key});
+  final bool isDarkMode;
+  final ValueChanged<bool> toggleTheme;
+  
+  const PantallaContador({super.key, required this.toggleTheme, required this.isDarkMode});
 
   @override
   State<PantallaContador> createState() => _PantallaContadorState();
@@ -32,7 +35,23 @@ class _PantallaContadorState extends State<PantallaContador> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Contador de clicks')),
+      appBar: AppBar(
+        title: Text('Contador de clicks'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.brightness_2),
+            onPressed: () {
+              widget.toggleTheme(!widget.isDarkMode);
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.brightness_5),
+            onPressed: () {
+              widget.toggleTheme(widget.isDarkMode);
+            },
+          ),
+        ],
+      ),
       drawer: const AppDrawer(),
       body: Center(
         child: Column(

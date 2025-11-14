@@ -4,7 +4,10 @@ import 'dart:async';
 import '../widgets/drawer.dart';
 
 class PantallaImagenesRandom extends StatefulWidget {
-  const PantallaImagenesRandom({super.key});
+  final bool isDarkMode;
+  final ValueChanged<bool> toggleTheme;
+  
+  const PantallaImagenesRandom({super.key, required this.toggleTheme, required this.isDarkMode});
 
   @override
   State<PantallaImagenesRandom> createState() => _PantallaImagenesRandomState();
@@ -117,7 +120,23 @@ class _PantallaImagenesRandomState extends State<PantallaImagenesRandom> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Center(child: Text('Imágenes Random'))),
+      appBar: AppBar(
+        title: const Center(child: Text('Imágenes Random')),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.brightness_2),
+            onPressed: () {
+              widget.toggleTheme(!widget.isDarkMode);
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.brightness_5),
+            onPressed: () {
+              widget.toggleTheme(widget.isDarkMode);
+            },
+          ),
+        ],
+      ),
       drawer: const AppDrawer(),
       body: Stack(
         children: [
@@ -169,8 +188,7 @@ class _PantallaImagenesRandomState extends State<PantallaImagenesRandom> {
                           'El juego ha terminado. Puntuación final: $puntos',
                           style: const TextStyle(
                             fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.blue,
+                            fontWeight: FontWeight.bold
                           ),
                           textAlign: TextAlign.center,
                         ),
