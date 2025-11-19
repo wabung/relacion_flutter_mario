@@ -62,16 +62,19 @@ class _PantallaContadorState extends State<PantallaContador> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 FloatingActionButton(
+                  heroTag: "btn_incrementar",
                   onPressed: _incrementar,
                   tooltip: "incrementar",
                   child: Icon(Icons.add),
                 ),
                 FloatingActionButton(
+                  heroTag: "btn_decrementar",
                   onPressed: _decrementar,
                   tooltip: "decrementar",
                   child: Icon(Icons.remove),
                 ),
                 FloatingActionButton(
+                  heroTag: "btn_reiniciar",
                   onPressed: _reiniciar,
                   tooltip: "reiniciar",
                   child: Icon(Icons.refresh),
