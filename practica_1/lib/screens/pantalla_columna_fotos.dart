@@ -9,6 +9,9 @@ class PantallaFotosColumna extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tamano = MediaQuery.of(context).size;
+    final anchura = tamano.width;
+    final altura = tamano.height;
     return Scaffold(
       appBar: AppBar(
         title: const Center(child: Text('Fotos en columna')),
@@ -31,12 +34,13 @@ class PantallaFotosColumna extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          
           children: [
-            Image.asset('assets/img/archer.png', width: 120, height: 120),
-            Image.asset('assets/img/saber.png', width: 120, height: 120),
-            Image.asset('assets/img/lancer.png', width: 120, height: 120),
-            Image.asset('assets/img/rider.png', width: 120, height: 120),
-            Image.asset('assets/img/berserker.png', width: 120, height: 120),
+            Image.asset('assets/img/archer.png', width: anchura * 0.4, height: altura * 0.15),
+            Image.asset('assets/img/saber.png', width: anchura * 0.4, height: altura * 0.15),
+            Image.asset('assets/img/lancer.png', width: anchura * 0.4, height: altura * 0.15),
+            Image.asset('assets/img/rider.png', width: anchura * 0.4, height: altura * 0.15),
+            Image.asset('assets/img/berserker.png', width: anchura * 0.4, height: altura * 0.15),
           ],
         ),
       ),

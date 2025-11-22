@@ -8,6 +8,6 @@ export 'pantalla_desafio.dart';
 export 'pantalla_repo.dart';
 export 'pantalla_responsive.dart';
 export 'pantalla_perfil_instagram.dart';
-export 'pantalla_principal.dart';
+export 'home_screen.dart';
 export 'pantalla_colores_random.dart';
 export 'pantalla_imagenes_random.dart';

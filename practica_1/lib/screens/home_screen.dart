@@ -2,6 +2,15 @@ import 'package:flutter/material.dart';
 import '../widgets/widgets.dart';
 import '../routes/app_routes.dart';
 
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MyApp();
+  }
+}
+
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
@@ -110,6 +119,9 @@ class PantallaPrincipal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+      final tamano = MediaQuery.of(context).size;
+    final anchura = tamano.width;
+    final altura = tamano.height;
     return Scaffold(
       appBar: AppBar(title: const Center(child: Text('Sobre mi')),
       actions: [
@@ -132,7 +144,7 @@ class PantallaPrincipal extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/img/wabung.png'),
+            Image.asset('assets/img/wabung.png', width: anchura * 0.4, height: altura * 0.4),
             const Text(
               'Mario García Marín',
               style: TextStyle(fontSize: 30,),

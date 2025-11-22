@@ -5,8 +5,10 @@ class ProfilePosts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: GridView.builder(
+    return
+      GridView.builder(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
           crossAxisSpacing: 2,
@@ -26,13 +28,11 @@ class ProfilePosts extends StatelessWidget {
             'assets/img/meowl_bol.png',
             'assets/img/meowl_soldier.png',
           ];
-          
           return Image.asset(
             imagenes[index],
-            fit: BoxFit.cover,
+            fit: BoxFit.cover
           );
         },
-      ),
-    );
+      );
   }
 }

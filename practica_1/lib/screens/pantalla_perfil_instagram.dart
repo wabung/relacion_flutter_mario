@@ -37,7 +37,8 @@ class PantallaPerfilInstagram extends StatelessWidget {
         ],
       ),
       drawer: const AppDrawer(),
-      body: Column(
+      body: SingleChildScrollView(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ProfileHeader(),
@@ -48,6 +49,7 @@ class PantallaPerfilInstagram extends StatelessWidget {
             ProfilePosts(),
           ],
         ),
+      ),
     );
   }
 }

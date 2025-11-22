@@ -9,6 +9,9 @@ class PantallaFotos extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tamano = MediaQuery.of(context).size;
+    final anchura = tamano.width;
+    final altura = tamano.height;
     return Scaffold(
       appBar: AppBar(
         title: const Center(child: Text('Galeria fotos')),
@@ -32,9 +35,9 @@ class PantallaFotos extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/img/gato_entrenando.png', width: 200, height: 200),
-            Image.asset('assets/img/gato_naranja.png', width: 200, height: 200),
-            Image.asset('assets/img/gato_kungfu.png', width: 200, height: 200),
+            Image.asset('assets/img/gato_entrenando.png', width: anchura * 0.3, height: altura * 0.25),
+            Image.asset('assets/img/gato_naranja.png', width: anchura * 0.3, height: altura * 0.25),
+            Image.asset('assets/img/gato_kungfu.png', width: anchura * 0.3, height: altura * 0.25),
           ],
         ),
       ),
