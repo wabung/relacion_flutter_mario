@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProfileBio extends StatelessWidget {
   const ProfileBio({super.key});
+
+  Future<void> _abrir() async {
+    final Uri url = Uri.parse('https://bit.ly/2w9g74q');
+    if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+      throw Exception('No se pudo abrir el enlace');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +28,9 @@ class ProfileBio extends StatelessWidget {
             overflow: TextOverflow.clip,
           ),
           Text("FYN"),
+          TextButton(
+          onPressed: _abrir,
+          child: Text("https://bit.ly/2w9g74q", style: TextStyle(color: Colors.blue))),
           SizedBox(height: 20),
         ],
       ),

@@ -107,6 +107,20 @@ class AppDrawer extends StatelessWidget {
               Navigator.pushReplacementNamed(context, AppRoutes.imagenesRandom);
             },
           ),
+          ListTile(
+            title: const Text('Adivinar Número'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushReplacementNamed(context, AppRoutes.adivinarNumero);
+            },
+          ),
+          ListTile(
+            title: const Text('Formulario con Switch'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushReplacementNamed(context, AppRoutes.formularioSwitch);
+            },
+          ),
         ],
       ),
     );

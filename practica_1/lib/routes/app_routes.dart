@@ -15,6 +15,8 @@ class AppRoutes {
   static const String instagram = '/instagram';
   static const String coloresRandom = '/colores-random';
   static const String imagenesRandom = '/imagenes-random';
+  static const String adivinarNumero = '/adivinar-numero';
+  static const String formularioSwitch = '/formulario-switch';
 
   static Map<String, WidgetBuilder> getRoutes(bool isDarkMode, ValueChanged<bool> toggleTheme) {
     return {
@@ -67,6 +69,14 @@ class AppRoutes {
         toggleTheme: toggleTheme,
       ),
       imagenesRandom: (context) => PantallaImagenesRandom(
+        isDarkMode: isDarkMode,
+        toggleTheme: toggleTheme,
+      ),
+      adivinarNumero: (context) => PantallaAdivinarNumero(
+        isDarkMode: isDarkMode,
+        toggleTheme: toggleTheme,
+      ),
+      formularioSwitch: (context) => PantallaFormularioSwitch(
         isDarkMode: isDarkMode,
         toggleTheme: toggleTheme,
       ),

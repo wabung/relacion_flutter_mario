@@ -11,3 +11,5 @@ export 'pantalla_perfil_instagram.dart';
 export 'home_screen.dart';
 export 'pantalla_colores_random.dart';
 export 'pantalla_imagenes_random.dart';
+export 'pantalla_adivinar_numero.dart';
+export 'pantalla_formulario_switch.dart';

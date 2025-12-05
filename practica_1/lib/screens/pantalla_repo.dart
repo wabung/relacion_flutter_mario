@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/widgets.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PantallaRepo extends StatelessWidget {
   final bool isDarkMode;
@@ -7,6 +8,13 @@ class PantallaRepo extends StatelessWidget {
   
   const PantallaRepo({super.key, required this.toggleTheme, required this.isDarkMode});
 
+  Future<void> _abrir() async {
+    final Uri url = Uri.parse('https://github.com/wabung/relacion_flutter_mario');
+    if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+      throw Exception('No se pudo abrir el enlace');
+    }
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,9 +44,12 @@ class PantallaRepo extends StatelessWidget {
               style: TextStyle(fontSize: 30,),
               textAlign: TextAlign.center,
             ),
-            const Text("https://github.com/wabung/relacion_flutter_mario",
+            TextButton(
+              onPressed: _abrir,
+              child: const Text("https://github.com/wabung/relacion_flutter_mario",
               style: TextStyle(fontSize: 20,),
               textAlign: TextAlign.center,
+              ),
             ),
           ],
         ),
