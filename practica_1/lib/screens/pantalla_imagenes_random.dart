@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:async';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../widgets/drawer.dart';
 
 class PantallaImagenesRandom extends StatefulWidget {
@@ -27,6 +28,7 @@ class _PantallaImagenesRandomState extends State<PantallaImagenesRandom> {
   @override
   void initState() {
     super.initState();
+    cargarPuntos();
     iniciarJuego();
   }
 
@@ -35,6 +37,18 @@ class _PantallaImagenesRandomState extends State<PantallaImagenesRandom> {
     timerImagen.cancel();
     timerJuego.cancel();
     super.dispose();
+  }
+
+  Future<void> cargarPuntos() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      puntos = prefs.getInt('puntos') ?? 0;
+    });
+  }
+
+  Future<void> guardarPuntos() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt('puntos', puntos);
   }
 
   void iniciarJuego() {
@@ -75,6 +89,7 @@ class _PantallaImagenesRandomState extends State<PantallaImagenesRandom> {
             puntos -= 2;
             imagenVisible = false;
           });
+          guardarPuntos();
           Future.delayed(const Duration(milliseconds: 500), () {
             mostrarNuevaImagen();
           });
@@ -91,6 +106,7 @@ class _PantallaImagenesRandomState extends State<PantallaImagenesRandom> {
       puntos++;
       imagenVisible = false;
     });
+    guardarPuntos();
 
     Future.delayed(const Duration(milliseconds: 500), () {
       mostrarNuevaImagen();
@@ -114,6 +130,7 @@ class _PantallaImagenesRandomState extends State<PantallaImagenesRandom> {
       tiempoJuego = 30;
       juegoActivo = true;
     });
+    guardarPuntos();
     iniciarJuego();
   }
 
